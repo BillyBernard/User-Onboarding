@@ -29,7 +29,8 @@ const onSubmit = evt => {
         <button disabled={disabled}>submit</button>
 
         <div className='errors'>
-          <div>{errors.name}</div>
+          <div>{errors.first_name}</div>
+          <div>{errors.last_name}</div>
           <div>{errors.email}</div>
           <div>{errors.password}</div>
           <div>{errors.termsOfService}</div>
@@ -39,11 +40,20 @@ const onSubmit = evt => {
       <div className='form-group inputs'>
         <h4>General information</h4>
 
-        <label>Name&nbsp;
+        <label>First Name&nbsp;
           <input
-            value={values.name}
+            value={values.first_name}
             onChange={onChange}
-            name='name'
+            name='first_name'
+            type='text'
+          />
+        </label>
+
+        <label>Last Name&nbsp;
+          <input
+            value={values.last_name}
+            onChange={onChange}
+            name='last_name'
             type='text'
           />
         </label>
