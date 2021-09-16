@@ -46,18 +46,20 @@ describe("Forms App", () => {
         passwordInput().type('secretSecret');
         termsOfServiceInput().click();
         submitBtn().click();
+        cy.contains('Billy');
     })
 
     it('submit button disabled on empty input', () => {
         firstNameInput().type('Billy');
-        firstNameInput().should('have.value', 'Billy');
+        //firstNameInput().should('have.value', 'Billy');
         lastNameInput().type('Paris');
-        lastNameInput().should('have.value', 'Paris');
-        emailInput().type('billybernard54@gmail.com');
-        emailInput().should('have.value', 'billybernard54@gmail.com');
+        //lastNameInput().should('have.value', 'Paris');
+        emailInput().type(' ');
+        //emailInput().should('have.value', 'billybernard54@gmail.com');
         passwordInput().type('secretSecret');
         termsOfServiceInput().click();
-        submitBtn().click();
+        termsOfServiceInput().should('have.checked', 'true');
+        submitBtn().should('be.disabled');
     })
 });
     
